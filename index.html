@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>VisAgent 纯前端组件库</title>
+</head>
+<body>
+  <div id="app"></div>
+
+  <script type="module">
+    // 导入所有组件
+    import { VisBenchmark } from "./src/components/Benchmark.js";
+    import { VisViewer } from "./src/components/Viewer.js";
+
+    // 运行组件库
+    async function start() {
+      const benchmark = new VisBenchmark();
+      const result = await benchmark.run();
+      VisViewer.render(result);
+    }
+
+    start();
+  </script>
+</body>
+</html>
